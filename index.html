@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+<title>FP</title>
+<script src="fp.min.js"></script>
+<script>
+    // Initialize the agent at application startup.
+    const fpPromise = FingerprintJS.load();
+  
+    // Get the visitor identifier when you need it.
+    fpPromise
+      .then(fp => fp.get())
+      .then(result => {
+        // This is the visitor identifier:
+        const visitorId = result.visitorId
+        document.write(visitorId);
+        console.log(visitorId)
+      })
+  </script>
+</head>
+<body>
+</body>
+</html>
